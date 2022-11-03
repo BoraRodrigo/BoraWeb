@@ -1,4 +1,5 @@
 ﻿using JuntoSeguros.Business;
+using JuntoSeguros.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -61,6 +62,53 @@ namespace JuntoSeguros.Controllers
             try
             {
                 return View();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString(), "Erro");
+                return null;
+            }
+        }
+        [HttpPost]
+        [Route("Cadastrar")]
+        public IActionResult Cadastrar(Pessoa_ViewModel view)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+
+                }
+                return View();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString(), "Erro");
+                return null;
+            }
+        }
+        [HttpGet]
+        [Route("_partial_PessoaFisica")]
+        public IActionResult _partial_PessoaFisica()
+        {
+            try
+            {
+                return PartialView();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString(), "Erro");
+                return null;
+            }
+        }
+
+        [HttpGet]
+        [Route("_partial_PessoaJuridica")]
+        public IActionResult _partial_PessoaJuridica()
+        {
+            try
+            {
+                return PartialView();
             }
             catch (Exception ex)
             {

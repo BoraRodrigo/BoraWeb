@@ -7599,7 +7599,7 @@ button.bg-primary:focus {
 }
 
 .bg-secondary {
-    background-color: #f7fafc !important;
+    background: linear-gradient(87deg, #f4f5f9 0, #825ee4 100%) !important
 }
 
 a.bg-secondary:hover,
@@ -7676,7 +7676,7 @@ button.bg-dark:focus {
 }
 
 .bg-default {
-    background: linear-gradient(87deg, #172b4d 0, #264372 100%) !important;
+    background: linear-gradient(24deg, #172b4d 0, #0f0f1f 100%) !important
 }
 
 a.bg-default:hover,
@@ -21526,7 +21526,7 @@ button.bg-lighter:focus {
 }
 
 .bg-gradient-primary {
-    background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;
+    background: linear-gradient(87deg, #080a12 0, #825ee4 100%) !important;
 }
 
 .bg-gradient-secondary {
@@ -21821,7 +21821,7 @@ button.section-darker:focus {
 }
 
 .bg-gradient-primary {
-    background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;
+    background: linear-gradient(87deg, #080a12 0, #825ee4 100%) !important;
 }
 
 .bg-gradient-secondary {
