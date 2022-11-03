@@ -1,0 +1,83 @@
+﻿@model JuntoSeguros.ViewModel.Pessoa_ViewModel
+@{
+
+}
+<br />
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => Model.ID, new { @id = "txt_IdPessoa"})
+
+    <div class="card">
+        <div class="card-header card-header-icon card-header-primary" id="">
+            <div class="row">
+                <div class="card-icon" id="minimizeSidebar">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    &nbsp
+                </div>
+                <h4 class="card-title">
+                    CADASTRAR PESSOA
+                </h4>
+            </div>
+        </div>
+
+        <div class="card-body card-body-left">
+            <div class="row col-12">
+                <div class="col-md-2 col-ct-2 pt-3">
+                    <div class="float-div input-effect">
+                        <label>Tipo* </label>
+                    </div>
+                </div>
+                <div class="col-md-3 col-ct-2" style="left:15px;top: 20px">
+                    @Html.RadioButtonFor(model => model.TipoPessoa, "J", new { @id = "ckek_TipoPessoaJuridica", style = "vertical-align: sub;", @class = "form-check-input tipoPessoa"})Jurídica<span class="circle">
+                        <span class="check"></span>
+                    </span>
+                </div>
+                <div class="col-md-3 col-ct-2" style="right:115px;top: 20px">
+                    @Html.RadioButtonFor(model => model.TipoPessoa, "F", new { @id = "ckek_TipoPessoaFisica", style = "vertical-align: sub;", @class = "form-check-input tipoPessoa" })Física<span class="circle">
+                        <span class="check"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="row col-12">
+                <div class="col-md-8">
+                    @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "col-md-0 control-label"})
+                    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", @id = "txt_nome" } })
+                    @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+            <br />
+            <div class="row col-12" id="">
+                <div class="col-md-4 col-ct-2 pt-3"></div>
+                <div class="row col-6">
+                    <div class="col-3">
+                        <a class="btn btn-secondary btn-lg mesmo-tamanho" id="" href="/Pessoa/Index">
+                            Voltar
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <input type="button" value="Cadastrar" id="" class="btn btn-success btn-lg mesmo-tamanho" />
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+}
+
+<style>
+    .mesmo-tamanho {
+        width: 100%;
+        white-space: normal;
+    }
+
+    label {
+        font-weight: bold
+    }
+</style>
+
+
+<script asp-append-version="true" src="~/Script/Pessoa/Cadastrar.js"></script>
